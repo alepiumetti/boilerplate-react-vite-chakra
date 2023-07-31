@@ -27,7 +27,7 @@ import {
 import pkg from "../../package.alias.json";
 import { startLoading, stopLoading } from "../../redux/actions/action.loading";
 
-const TITLE = "título";
+const TITLE = "Título";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -80,12 +80,10 @@ const Login = () => {
   };
 
   return (
-    <HStack w="100%" h="100vh">
+    <HStack w="100vw" h="100vh">
       {mobile[0] && (
         <VStack w="50%" h="100%">
           <FormControl p={5}>
-            {/* Agregar src de imagen */}
-            <Image boxSize="50%" objectFit="contain" m="auto" />
             <FormLabel
               fontWeight="bold"
               textAlign="center"
@@ -100,7 +98,7 @@ const Login = () => {
       )}
       <VStack
         h="100%"
-        w={["50%", "100%"]}
+        w={["100%", "50%"]}
         bgColor="brand.primary"
         display="flex"
         justifyContent={["space-between", "space-around"]}
@@ -108,8 +106,6 @@ const Login = () => {
         {!mobile[0] && (
           <Box bg="white" borderRadius={5} w="xs">
             <FormControl p={2}>
-              {/* Agregar src de imagen */}
-              <Image objectFit="contain" m="auto" />
               <FormLabel
                 fontWeight="bold"
                 textAlign="center"
@@ -123,20 +119,20 @@ const Login = () => {
           </Box>
         )}
         <Card
-          maxW={["md", "xs"]}
-          h={["md", "sm"]}
+          maxW={["xs", "md"]}
+          h={["sm", "md"]}
           borderRadius={6}
           bg="white"
           my="auto"
         >
           <CardHeader>
             <Heading textAlign="center" size="lg">
-              Ingresar
+              Bienvenido
             </Heading>
           </CardHeader>
           <form id="formlogin">
             <CardBody placeSelf="center" pt={10}>
-              <FormControl px={mobile[0] ? 10 : 7}>
+              <FormControl px={[7, 10]}>
                 <FormLabel>Usuario</FormLabel>
                 <Input
                   placeholder="Ingrese su usuario"
@@ -150,7 +146,7 @@ const Login = () => {
                 />
               </FormControl>
               <br />
-              <FormControl px={mobile[0] ? 10 : 7}>
+              <FormControl px={[7, 10]}>
                 <FormLabel>Contraseña</FormLabel>
                 <InputGroup>
                   <Input
